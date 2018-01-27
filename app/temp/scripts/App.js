@@ -11335,6 +11335,18 @@ var StickyHeader = function () {
                     },
                     offset: "-40%"
                 });
+
+                new Waypoint({
+                    element: currentPageSection,
+                    handler: function handler(direction) {
+
+                        if (direction == "up") {
+                            var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+                            that.headerLinks.removeClass("is-current-link");
+                        }
+                    },
+                    offset: "-90%"
+                });
             });
         }
     }]);
